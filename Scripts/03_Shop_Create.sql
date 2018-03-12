@@ -1,0 +1,11 @@
+IF NOT EXISTS (SELECT 1 FROM sysobjects WHERE id = object_id(N'[dbo].[Shop]'))
+BEGIN
+    CREATE TABLE Shop(
+	    ShopId INT NOT NULL IDENTITY,
+		Name NVARCHAR(200) NOT NULL,
+		Address NVARCHAR(50) NULL,
+		City NVARCHAR(50) NULL,
+		Country NVARCHAR(50) NULL,
+		CONSTRAINT PK_Shop PRIMARY KEY (ShopId)
+	)
+END
